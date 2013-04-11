@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+  
+          http://www.apache.org/licenses/LICENSE-2.0
+  
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<!--
+     This file describes the layout of the main SkeletonApp activity
+     user interface.
+-->
+
+<!--
+     The top view is a layout manager that places its child views into
+     a row, here set to be vertical (so the first is at the top)
+-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".BibsonomyPosterActivity" >
+
+    <!--
+         First view is a text editor.  We want it to use all available
+         horizontal space, and stretch to fill whatever vertical space
+         is available to it.  Note the use of the "id" attribute, which
+         allows us to find this object from the Java code.
+    -->
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="match_parent"
+        android:layout_height="116dp"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/logo"
+        android:padding="10dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/bibsonomylogo"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/doc"
+        android:textAppearance="@style/TextAppearance" />
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="@string/enterusername" >
+
+        <requestFocus />
+    </EditText>
+    
+<EditText
+        android:id="@+id/apikey"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/enterapikey" >
+
+     
+    </EditText>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/semi_black"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+
+        <!--
+             On the left: the "back" button.  See styles.xml for the
+             definition of style/ActionButton, which we use to hold
+             common attributes that are used for both this and the
+             clear button.  See strings.xml for the definition of
+             string/back.
+        -->
+
+        <Button
+            android:id="@+id/save"
+            style="@style/ActionButton"
+            android:text="@string/save" />
+
+        <!-- In the middle: a custom image, -->
+
+
+        <!--
+             On the right: another button, this time with its text color
+             changed to red.  Again, see colors.xml for the definition.
+        -->
+
+    </LinearLayout>
+
+</LinearLayout>
